@@ -4,6 +4,7 @@
 *.orig
 *.log
 *.rej
+*.psd
 *.swo
 *.swp
 *.zip
