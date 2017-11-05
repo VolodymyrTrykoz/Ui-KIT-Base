@@ -47,6 +47,11 @@ $global-font-icon: 'social';
       content: $icon-delete-button;
     }
   }
+  &.icon--delete-icon {
+    &:before {
+      content: $icon-delete-icon;
+    }
+  }
   &.icon--facebook {
     &:before {
       content: $icon-facebook;
@@ -85,6 +90,11 @@ $global-font-icon: 'social';
   &.icon--twitter {
     &:before {
       content: $icon-twitter;
+    }
+  }
+  &.icon--valid {
+    &:before {
+      content: $icon-valid;
     }
   }
   &.icon--youtube {
