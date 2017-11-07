@@ -8,7 +8,7 @@
 
 	<div class="container">
 		<div class="wrapper">
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 
 					<button class="btn btn-lg btn--blue white">Load more</button>
 				
@@ -24,7 +24,7 @@
 
 
 
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 				
 					<button class="btn btn-md btn--blue white">Learn more</button>
 				
@@ -44,7 +44,7 @@
 
 
 
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 				
 				
 					<button class="btn btn-sm btn--blue white">Start</button>
@@ -109,14 +109,14 @@
 					<button class="btn white btn--green borrad05tr borrad05br form-button" type="submit">Send</button>
 				</form>	
 
-				<div class="but">
+				
 					<div class="select-arrow">	
 						<select class="btn form-button--select btn--green borrad05 white">
 						  <option value="seller">Ok</option>
 						  <option value="client">Hm</option>
 						</select>
 					</div>
-				</div>
+				
 
 
 			</div>
@@ -124,7 +124,7 @@
 
 		<div class="wrapper">
 		
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 
 					<div class="input">
 						<input type="e-mail" placeholder="E-mail" class="placeholder placeholder-width placeholder-active borrad05 br--grey"> 
@@ -155,7 +155,7 @@
 
 
 
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 
 			
 					<div class="input">
@@ -167,7 +167,7 @@
 			
 					<div class="input">
 						<input type="e-mail" placeholder="hellocreativeda.sh" class="placeholder placeholder-width borrad05 placeholder-invalid"> 
-						<span class="icon icon--cancel icon--right"></span>
+						<span class="icon icon--cancel icon--cancel-red icon--right"></span>
 					</div>
 			
 					<form class="btn-group">
@@ -195,7 +195,7 @@
 
 
 		<div class="wrapper">
-			<div class="row flex-align-center">
+			<div class="marbot15 flex-align-center">
 
 					<div class="input">
 						<input type="e-mail" placeholder="E-mail" class="placeholder placeholder--sm placeholder-active borrad05 br--grey"> 
@@ -228,7 +228,7 @@
 
 
 
-			<div class="row flex-align-center">
+			<div class="flex-align-center">
 			
 					<div class="input">
 						<input type="e-mail" placeholder="hello@creative.sh" class="placeholder placeholder--sm borrad05 placeholder-valid"> 
@@ -239,7 +239,7 @@
 			
 					<div class="input">
 						<input type="e-mail" placeholder="hellocreativ.sh" class="placeholder placeholder--sm borrad05 placeholder-invalid"> 
-						<span class="icon icon--cancel icon--right"></span>
+						<span class="icon icon--cancel icon--cancel-red  icon--right"></span>
 					</div>
 			
 
@@ -304,35 +304,35 @@
 
 
 
-				<div class="radio">
+				<div class="radio marbot15">
 					<input type="radio" class="radio-but" id="radiobutton-1" name="condition" value="off"  >
 					<label for="radiobutton-1" class="radio-label"><span></span>
 						Radiobutton Off
 					</label>
 				</div>
 
-				<div class="radio">
+				<div class="radio marbot15">
 					<input type="radio" checked class="radio-but" id="radiobutton-2" name="condition" value="on" >
 					<label for="radiobutton-2" class="radio-label"><span></span>
 						Radiobutton On
 					</label>
 				</div>
 
-				<div class="radio">
+				<div class="radio marbot15">
 					<input type="radio" disabled class="radio-but" id="radiobutton-1" name="condition" value="disabled"  >
 					<label for="radiobutton-1" class="radio-label checkbox--disabled"><span></span>
 						Radiobutton Disabled
 					</label>
 				</div>
 
-				<div class="radio">
+				<div class="radio marbot15">
 					<input type="checkbox" class="checkbox-input" id="checkbox-4" >
 					<label for="checkbox-4" class="checkbox-label">
 						Checkbox Off
 					</label>
 				</div>
 
-				<div class="radio">
+				<div class="radio marbot15">
 					<input type="checkbox" checked class="checkbox-input" id="checkbox-5" >
 					<label for="checkbox-5" class="checkbox-label">
 						Checkbox On
@@ -406,7 +406,9 @@
 						</div>	
 
 						<div class="string-wide">
-							<div class="string-progress"></div>	
+							<div class="string-progress-wrap">
+								<div class="string-progress"></div>	
+							</div>		
 						</div>
 
 
@@ -502,26 +504,194 @@
 
 		<div class="container">
 			<div class="row flex-align-center">
-				<div class="col-md-3">
-					<ul>
-						<li><a href="#">Categories</a>
-							<ul>
-								<li><a href="#">Art Direction</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">Graphic Design</a></li>
-								<li><a href="#">Illustration</a></li>
+				<div class="col-md-2">
+					<ul class="categories ls-none">
+						<li class="categories__heading">
+							<a href="#" class="heading__link categories-link">Categories</a>
+							<ul class="ls-none">
+								<li><a href="#" class="categories-link categories__intern-link">Art Direction</a></li>
+								<li><a href="#" class="categories-link categories__intern-link">Branding</a></li>
+								<li><a href="#" class="categories-link categories__intern-link categories__intern-link--active">Graphic Design</a></li>
+								<li><a href="#" class="categories-link categories__intern-link marbot15">Illustration</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Popular</a></li>
+						<li class="categories__heading">
+							<a href="#" class="heading__link categories-link divider">Popular</a>
+							<ul class="ls-none">
+								<li><a href="#" class="categories-link categories__intern-link">Motion Graphic</a></li>
+								<li><a href="#" class="categories-link categories__intern-link">UI/UX</a></li>
+							</ul>	
+						</li>
 					</ul>
 				</div>
-				<div class="col-md-9">9</div>
+				<div class="col-md-10">
+					
+
+					<table class="music-table">
+						<tr class="border-bottom">
+							<th class="music-table__heading tabcell-sm">#</th>
+							<th class="music-table__heading tabcell-lg">Artist</th>
+							<th class="music-table__heading tabcell-lg">Album</th>
+							<th class="music-table__heading tabcell-lg">Song</th>
+							<th class="music-table__heading tabcell-sm">Select</th>
+						</tr>
+						<tr class="border-bottom ">
+							<td class="music-table__heading">1</td>
+							<td class="music-table__item green">Rasabian</td>
+							<td class="music-table__item green">Velocipartol</td>
+							<td class="music-table__item green">Re-wired</td>
+							<td class="music-table__item taright">
+								<div class="radio">
+									<input type="checkbox" checked class="checkbox-input" id="checkbox-7" >
+									<label for="checkbox-7" class="checkbox-label checkbox-label--for-table">
+										
+									</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-bottom">
+							<td class="music-table__heading ">2</td>
+							<td class="music-table__item">Suuns</td>
+							<td class="music-table__item">Images Du Futur</td>
+							<td class="music-table__item">Up Past The Nursery</td>
+							<td class="music-table__item taright">
+								<div class="radio">
+									<input type="checkbox" class="checkbox-input" id="checkbox-8" >
+									<label for="checkbox-8" class="checkbox-label checkbox-label--for-table">
+										
+									</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-bottom">
+							<td class="music-table__heading">3</td>
+							<td class="music-table__item">RHCP</td>
+							<td class="music-table__item">Californication</td>
+							<td class="music-table__item">Around the World</td>
+							<td class="music-table__item taright">
+								<div class="radio">
+									<input type="checkbox" class="checkbox-input" id="checkbox-9" >
+									<label for="checkbox-9" class="checkbox-label checkbox-label--for-table">
+										
+									</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="border-bottom">
+							<td class="music-table__heading">4</td>
+							<td class="music-table__item green">Woodkid</td>
+							<td class="music-table__item green">The Golden Age</td>
+							<td class="music-table__item green">Iron</td>
+							<td class="music-table__item taright">
+								<div class="radio">
+									<input type="checkbox" checked class="checkbox-input" id="checkbox-10" >
+									<label for="checkbox-10" class="checkbox-label checkbox-label--for-table">
+										
+									</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="music-table__heading">5</td>
+							<td class="music-table__item">Hugo</td>
+							<td class="music-table__item">Old Tyme Religion</td>
+							<td class="music-table__item">99 problems</td>
+							<td class="music-table__item taright">
+								<div class="radio">
+									<input type="checkbox" class="checkbox-input" id="checkbox-11" >
+									<label for="checkbox-11" class="checkbox-label checkbox-label--for-table">
+										
+									</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+
+
+				</div>
 			</div>
 		</div>
 
 		
 	</div>
 
+
+	<div class="container">
+		<div class="row notification-wrap">
+			<div class="notification borrad05 white success--bg flex-hor-space-betw">
+				<div class="ext-wrap">
+					<p class="white notification__p">This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.</p>
+					<span class="icon icon--cancel notification__icon"></span>
+				</div>	
+			</div>
+		</div>
+
+
+		<div class="row notification-wrap">
+			<div class="notification borrad05 white alarm-bg flex-hor-space-betw">
+				<div class="ext-wrap">
+					<p class="white notification__p">Poor Alice! It was as much as she could do, lying down on one side, to look through into the garden with one eye; 
+					but to get through was more hopeless than ever: she sat down and began to cry again.</p>
+					<span class="icon icon--cancel notification__icon"></span>
+				</div>	
+			</div>
+		</div>
+
+
+		<div class="row notification-wrap">
+			<div class="notification borrad05 white danger--bg">
+				<div class="ext-wrap">
+					<div class="flex-hor-space-betw">
+						<p class="white notification__p">At first, for some time, I was not able to answer him one word; but as he had taken me in his arms I held fast by him, or I should have fallen to the ground..</p>
+						<span class="icon icon--cancel notification__icon"></span>
+					</div>		
+					<button class="btn btn-sm btn--danger borrad05 white martop15">Submit</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col martop15">
+				<div class="notification borrad05 br--dark">
+					<div class="ext-wrap">
+						<div class="flex-hor-space-betw">
+							<div class="pop__text">
+								<h2>Popover header</h2>
+								<p class="notification__p">At first, for some time, I was not able to answer him one word; but as he had taken me in his arms I held fast by him, or I should have fallen to the ground..</p>
+							</div>
+							<span class="icon icon--cancel notification__icon"></span>
+						</div>		
+						<button class="btn btn--green btn--pop width borrad05 white martop15">Cool</button>
+						<button class="btn btn--blue btn--pop width borrad05 white martop15 marleft1rem">Not shure</button>
+					</div>	
+				</div>
+			</div>
+
+
+
+			<div class="col martop15">
+				<div class="notification notification--grey borrad05">
+					<div class="ext-wrap">
+						<div class="flex-hor-space-betw">
+							<div class="pop__text white">
+								<h2>Popover header</h2>
+								<p class="notification__p">At first, for some time, I was not able to answer him one word; but as he had taken me in his arms I held fast by him, or I should have fallen to the ground..</p>
+							</div>
+							<span class="icon icon--cancel notification__icon white"></span>
+						</div>		
+						<button class="btn btn--pop btn--transp width borrad05 br--green green martop15">Cool</button>
+						<button class="btn btn--pop btn--transp width borrad05 br--yellow alarm martop15 marleft1rem">Not shure</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 

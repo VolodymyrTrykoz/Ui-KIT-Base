@@ -3,19 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 @import 'icons/iconfont__variables';
 @import 'icons/iconfont__icons';
-@import 'normalize/import-now';//attaching normalize here
+@import 'base/normalize';
 
 
 
 
 
 // Base Style
-@import "base/_mixin";
-@import "base/_fonts";
+
 @import "base/_variables";
-@import "base/_extend";
-@import "base/_function";
-@import "base/_sprite";
+@import "base/placeholders";
 @import "base/_bootstrap-grid"; // bootstrap v4 grid
 
 
@@ -25,40 +22,9 @@
 
 
 
-
-$inactive-placeholder: #b8bfc6;
-$active-placeholder:   #383737; 
-$valid: #24aa98;
-$invalid: #db7560;
-$disabled:  #dee2e7;
-$default: #c6ccd2;
-$blue: #65abd0;
-
-
-
-%vert-align {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-%flex-hor-vert-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;}
-
-%borrad50 {
-  border-radius: 50%;
-}
-
-
-%transition {
-  transition: 0.2s linear;
-}
-
 html {
   font-size: 62.5%;
-  font-family: 'Cabin', sans-serif;
+  font-family: $primary_font;
 }
 
 
@@ -85,6 +51,11 @@ button {
   justify-content: space-between;
 }
 
+.flex-hor-space-betw {
+  display: flex;
+  justify-content: space-between;
+}
+
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   /*  font-family: 'icomoon' !important;*/
@@ -108,21 +79,25 @@ button {
   margin-bottom: 2.5rem;
 }
 
+.marbot15 {
+  margin-bottom: 1.5rem;
+}
+
+.martop15 {
+  margin-top: 1.5rem;
+}
+
+.padleft2 {
+  padding-left: 2em;
+} 
+
 .container {
   width: 94rem;
   margin: 0 auto;
 }
 
-.row {
-  margin: 1.5rem 0.5rem;
-  
-}
 
-.but {
-  display: inline-block;
-}
-
-.borrad05 {
+.borrad05, %borrad05 {
   border-radius: 0.5rem;
 }
 
@@ -193,7 +168,17 @@ button {
 
 .btn-sm {
   font-size: 1.4rem;
-  padding: 1em 2em;
+  padding: 0.6em 2.2em;
+}
+
+.btn--pop {
+  font-size: 1.4rem;
+  padding: 0.8em 1em;
+
+}
+
+.btn--transp {
+  background: transparent;
 }
 
 .white {
@@ -204,31 +189,64 @@ button {
   color: #65abd0;
 }
 
+.green {
+  color: $valid;
+}
+
+.success--bg {
+  background: $valid;
+}
+
+.alarm {
+  color: $alarm;
+    &-bg {
+      background: $alarm;
+    }
+}
+
+.danger--bg {
+  background: $invalid;
+}
+
 .br--blue {
   border: 2px solid #65abd0;
 }
 
 .br--grey, %bg--grey {
   border: 2px solid #c6ccd2;
+    &-tbl {
+    border-width: 2px;
+    border-style: solid;
+    border-right: none;
+    border-color: #c6ccd2;
+    }
+
+    &-tb {
+    border-width: 2px;
+    border-style: solid;
+    border-right: none;
+    border-left: none;
+    border-color: #c6ccd2;
+  }
 }
 
-.br--grey-tbl {
-  border-width: 2px;
-  border-style: solid;
-  border-right: none;
-  border-color: #c6ccd2;
+.br--dark {
+  border: 2px solid $active-placeholder;
 }
 
-.br--grey-tb {
-  border-width: 2px;
-  border-style: solid;
-  border-right: none;
-  border-left: none;
-  border-color: #c6ccd2;
+.br--green {
+  border: 2px solid $valid;
 }
 
-.btn--blue {
-  background: #65abd0;
+.br--yellow {
+  border: 2px solid $alarm;
+}
+
+
+
+
+.btn--blue, %btn--blue {
+  background: $blue;
 
     &:hover {
     background:  #5093b7;
@@ -269,6 +287,16 @@ button {
     }
 }
 
+.btn--danger {
+  background: rgba(247,247,247, 0.5);
+  &:hover {
+    background:  rgba(247,247,247, 0.2);
+    }
+    &:active {
+    background:  rgba(247,247,247, 0.1);
+    }
+}
+
 .next {
   padding: 1em 1.5em;
   position: relative;
@@ -286,10 +314,10 @@ button {
 .next--md:after {
   content: ''; 
   position: absolute;
-  right: -44px;
-  top: 0;
-  border: 25px solid transparent;
-  border-left: 22px solid #65abd0;
+  right: -42px;
+  top: 1px;
+  border: 24px solid transparent;
+  border-left: 19px solid #65abd0;
 }
 
 
@@ -303,7 +331,7 @@ button {
   content: ''; 
   position: absolute;
   right: -41px;
-  top: 0;
+  top: 1px;
   border: 22px solid transparent;
   border-left: 22px solid #65abd0;
 }
@@ -344,13 +372,14 @@ input {
   border: none;
   outline: none;
 }
+
 .placeholder {
   font-size: 1.6rem;
-    padding: {
-    top: 1em;
-    bottom: 1em;
-    left: 1.1em;
-  }
+          padding: {
+          top: 1em;
+          bottom: 1em;
+          left: 1.1em;
+        }
   color: $active-placeholder;
   outline: none;
   
@@ -437,7 +466,6 @@ select {margin: 0;
 
 }
 
-
 .placeholder-active:focus {
   border: 2px solid #65abd0;
 
@@ -500,10 +528,12 @@ select {margin: 0;
 }
 
 .icon--valid {
+  cursor: pointer;
   color: $valid;
 }
 
-.icon--cancel {
+.icon--cancel-red {
+  cursor: pointer;
   color: $invalid;
 }
 
@@ -536,10 +566,6 @@ textarea {
   width: 45%;
 }
 
-.radio {
-  margin: 2rem 1rem;
-}
-
 .radio-but {
   position: absolute;
 }
@@ -554,6 +580,16 @@ textarea {
   top: -0.1em;
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+.checkbox-label--for-table {
+   top: -0.5em;
+   left: 1em; 
+}
+
+
+.taright {
+  text-align: right;
 }
 
 .checkbox--disabled {
@@ -601,8 +637,6 @@ input[type="radio"] + label span {
 
 
 input[type="radio"]:checked + label span {
-  width: 1rem;
-  height: 1rem;
   border: 3px solid  #dee2e7;
   background-color: #65abd0;
 }
@@ -613,6 +647,20 @@ input[type="radio"]:checked + label span {
   height: 4px;
   border-radius: 2px;
   background: $default;
+        &-yellow {
+        width: 50%;
+        height: 4px;
+        background: $alarm;
+        margin-left: 20%;
+        }
+
+        &-blue {
+        width: 20%;
+        height: 4px;
+        background: #65abd0;
+      }
+
+
 
 }
 
@@ -622,7 +670,7 @@ input[type="radio"]:checked + label span {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background: #d9c26c;
+  background: $alarm;
   border: 3px solid #fff;
   top: -0.7rem;;
   left: 20%;
@@ -634,19 +682,10 @@ input[type="radio"]:checked + label span {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background: #d9c26c;
+  background: $alarm;
   border: 3px solid #fff;
   top: -0.7rem;
   left: 70%;
-}
-
-
-.string-yellow {
-  width: 50%;
-  height: 4px;
-  background: #d9c26c;
-  margin-left: 20%;
-
 }
 
 .second-string {
@@ -668,11 +707,7 @@ input[type="radio"]:checked + label span {
   left: 20%;
   }
 
-  .string-blue {
-    width: 20%;
-    height: 4px;
-    background: #65abd0;
-  }
+
 
 
 .width25 {
@@ -689,12 +724,17 @@ input[type="radio"]:checked + label span {
    height: 3.5rem;
    border-radius: 2rem;
 }
+//this is a relative for 62%-div. It allows correct reflection of % from 0 to 100% in frames of another relative
+.string-progress-wrap {
+  position: relative;
+  width: 98%;
+  margin: 0 auto;
+}
 
 
 .string-progress {
   position: absolute;
   top: 0.3rem;
-  left: 0.3rem;
   width: 62%;
   border-radius: 2rem;
   height: 3rem;
@@ -737,11 +777,10 @@ input[type="radio"]:checked + label span {
   transition: .4s;
   border-radius: 34px;
   border: 0.2rem solid $disabled;
+          &-bg {
+          background: $disabled;
+          }
   
-}
- 
-.slider-bg {
-  background: $disabled;
 }
 
 .slider:before {
@@ -768,19 +807,20 @@ input[type="radio"]:checked + label span {
 }
 
 .checkbox-text {
-  
   z-index: 1;
+
+    &--left {
+    @extend %vert-align;
+    left: 1.5rem;
+    }
+
+    &--right {
+    @extend %vert-align;
+    right: 1.5rem;
+  }
 }
 
-.checkbox-text--left {
-  @extend %vert-align;
-  left: 1.5rem;
-}
 
-.checkbox-text--right {
-  @extend %vert-align;
-  right: 1.5rem;
-}
 
 
 input:checked + .slider {
@@ -908,21 +948,22 @@ input:checked + .slider-end-white:before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+      &__item {
+       border: 5px solid #fff;
+      }
+
+      &__item--left {
+      border-right: 5px solid #fff;
+    }
+
+
+
+      &__item--center {
+      left: 50%;
+  }
 }
 
-
-.steps__item {
- border: 5px solid #fff;
-}
-
-.steps__item--left {
-  border-right: 5px solid #fff;
-}
-
-
-.steps__item--center {
-  left: 50%;
-}
 
 .steps__item--right {
    border-left: 5px solid #fff;
@@ -968,35 +1009,160 @@ input:checked + .slider-end-white:before {
 
 .pagination {
   font-size: 1.6rem;
+
+        &__link {
+        @extend %flex-hor-vert-center;
+        text-decoration: none;
+        color: $active-placeholder;
+            &--active {
+            @extend %pagination__number;
+            background: $blue;
+            color: white;
+          }
+
+            &--inactive {
+            color: $disabled;
+            }
+      }
+
+
+       &__number, %pagination__number {
+        @extend %borrad50;
+        @extend %transition;
+        width: 30px;
+        height: 30px;
+        border: 1px solid transparent;//interesting solution but this way provides smooth hovering effect without sharp shivers
+          &:hover {
+            border: 1px solid $disabled;//interesting solution but this way provides smooth hovering effect without sharp shivers
+          }
+      }
  
 }
-.pagination__link {
-  @extend %flex-hor-vert-center;
+
+
+
+.ls-none {
+  list-style: none;
+  padding-left: 0;
+}
+
+.categories-link {
   text-decoration: none;
-  color: $active-placeholder;
-  
 }
 
-
-.pagination__number, %pagination__number {
-  @extend %borrad50;
-  @extend %transition;
-  width: 30px;
-  height: 30px;
-  border: 1px solid transparent;//interesting solution but this way provides smooth hovering effect without sharp shivers
-  
-}
-
-.pagination__number:hover {
-  border: 1px solid $disabled;//interesting solution but this way provides smooth hovering effect without sharp shivers
-}
-
-.pagination__link--active {
-  @extend %pagination__number;
-  background: $blue;
-  color: white;
-}
-
-.pagination__link--inactive {
+.heading__link {
+  font-size: 1.4rem;
+  display: block;
+  padding: 0.62em;
   color: $disabled;
+  padding-top: 2rem;
+
+}
+
+.categories__intern-link {
+  font-size: 1.4rem;
+  display: block;
+  padding: 0.62em;
+  color: $active-placeholder;
+
+        &--active {
+        color: #fff;
+        @extend %btn--blue;
+        @extend %borrad05;
+      }
+ 
+
+}
+
+
+
+.divider {
+  position: relative;
+}
+
+.divider:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -0.3rem;
+  width: 100%;
+  height: 2px;
+  background: $disabled;
+}
+
+
+
+//---------------Table---------------//
+
+.music-table {
+  width: 100%;
+  text-align: left;
+
+      &__heading {
+      font-size: 1.4rem;
+      color: $disabled;
+    }
+
+      &__item {
+      font-size: 1.6rem;
+    }
+
+}
+
+.border-bottom {
+  border-bottom: 2px solid $disabled;
+}
+
+
+td, th {
+  padding: 1em 0.75em;
+}
+
+.tabcell-sm {
+  width: 5%;
+}
+.tabcell-lg {
+  width: 25%;
+}
+
+//-------notification--------//
+
+.notification-wrap {
+  margin: 1rem;
+}
+
+.notification {
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+
+  &__p {
+    margin: 0;
+    padding-right: 3em;
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 2em;
+    top:   2em;
+    cursor: pointer;
+  }
+
+  &--grey {
+    background: $notif-bg;
+  }
+}
+
+
+.ext-wrap {
+  padding: 2rem;
+}
+
+
+
+//--------Popover---------//
+
+.width {
+  width: 9rem;
 }
